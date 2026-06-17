@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.examproject1styear.gui.createUserController">
+   <children>
+      <TextField layoutX="66.0" layoutY="66.0" />
+      <Text layoutX="14.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" />
+      <TextField layoutX="66.0" layoutY="113.0" />
+      <Text layoutX="14.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mail:" wrappingWidth="51.58310890197754" />
+      <Button fx:id="btnCreateUser" layoutX="7.0" layoutY="175.0" mnemonicParsing="false" text="Create User" />
+      <Text layoutX="244.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role:" />
+      <TextField layoutX="281.0" layoutY="66.0" />
+      <Button fx:id="btnCancel" layoutX="548.0" layoutY="373.0" mnemonicParsing="false" text="Cancel" />
+   </children>
+</AnchorPane>
