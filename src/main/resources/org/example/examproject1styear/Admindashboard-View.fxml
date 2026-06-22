@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.examproject1styear.gui.AdminDashboardController">
    <children>
@@ -12,19 +11,15 @@
       <Button fx:id="btnLogout" layoutX="548.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
       <Button fx:id="btnLogs" layoutX="111.0" layoutY="2.0" mnemonicParsing="false" text="logs" />
       <Button fx:id="btnscanning" layoutX="149.0" layoutY="2.0" mnemonicParsing="false" text="Scanning" />
-      <VBox layoutY="258.0" prefHeight="141.0" prefWidth="555.0">
-         <children>
-            <TreeTableView prefHeight="141.0" prefWidth="468.0">
-              <columns>
-                  <TreeTableColumn prefWidth="75.0" text="Name" />
-                <TreeTableColumn prefWidth="75.0" text="Username" />
-                <TreeTableColumn prefWidth="75.0" text="Mail" />
-                  <TreeTableColumn prefWidth="75.0" text="Role" />
-                  <TreeTableColumn prefWidth="75.0" />
-                  <TreeTableColumn prefWidth="75.0" />
-              </columns>
-            </TreeTableView>
-         </children>
-      </VBox>
+      <TableView fx:id="tblUsers" layoutY="200.0" prefHeight="200.0" prefWidth="304.0">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />
+            <TableColumn fx:id="colName" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="colUsername" prefWidth="75.0" text="Username" />
+          <TableColumn fx:id="colRole" prefWidth="75.0" text="Role" />
+        </columns>
+      </TableView>
+      <Button layoutX="323.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleDeleteUser" prefHeight="25.0" prefWidth="88.0" text="Delete User" />
+      <Button layoutX="323.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleEditUser" prefHeight="25.0" prefWidth="88.0" text="Edit User" />
    </children>
 </AnchorPane>
