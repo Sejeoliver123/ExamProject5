@@ -112,8 +112,10 @@ public class AdminDashboardController {
     }
     @FXML
     private void handleDeleteUser() {
+        // Henter den bruger, som er markeret i TableView
         User selectedUser = tblUsers.getSelectionModel().getSelectedItem();
 
+        // Hvis der ikke er valgt en bruger, vises en advarsel
         if (selectedUser == null) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Ingen bruger valgt");
@@ -122,19 +124,26 @@ public class AdminDashboardController {
             return;
         }
 
+        // SQL-kommando til at slette brugeren ud fra brugerens Id
         String sql = "DELETE FROM [User] WHERE Id = ?";
 
+        // Opretter forbindelse til databasen
         MyDatabaseConnector databaseConnector = new MyDatabaseConnector();
 
         try (Connection connection = databaseConnector.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
 
+            // Indsætter den valgte brugers Id i SQL-kommandoen
             statement.setInt(1, selectedUser.getId());
+
+            // Udfører sletningen i databasen
             statement.executeUpdate();
 
+            // Genindlæser tabellen, så den slettede bruger forsvinder fra GUI'en
             loadUsers();
 
         } catch (SQLException e) {
+            // Udskriver databasefejl i konsollen
             e.printStackTrace();
         }
     }
