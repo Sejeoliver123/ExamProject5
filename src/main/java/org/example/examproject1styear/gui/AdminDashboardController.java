@@ -1,6 +1,5 @@
 package org.example.examproject1styear.gui;
 
-import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,10 +8,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
+import javafx.scene.control.Button;
 
-public class UserDashboardController {
-    public Button btnScanning;
-    public Button logout;
+public class AdminDashboardController {
+    @FXML
+    private Button btnCreateUser;
+    @FXML
+    private Button btnLogout;
+    @FXML
+    private Button btnLogs;
+    @FXML
+    private Button btnscanning;
 
     @FXML
     private void handleLogout(ActionEvent event) throws IOException {
@@ -30,4 +36,6 @@ public class UserDashboardController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
 }
+
