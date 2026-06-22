@@ -37,5 +37,19 @@ public class AdminDashboardController {
         stage.show();
     }
 
+    @FXML
+    private void handleCreateUser(ActionEvent event) throws IOException {
+
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/org/example/examproject1styear/CreateUser.fxml"));
+
+        Parent root = loader.load();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        stage.setTitle("Create User");
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 }
 
