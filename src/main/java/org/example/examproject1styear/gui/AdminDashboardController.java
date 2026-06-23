@@ -176,5 +176,19 @@ public class AdminDashboardController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+    @FXML
+    private void handleLogs(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("/org/example/examproject1styear/logs-view.fxml"));
+
+        Parent root = loader.load();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setTitle("Logs");
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+
 }
 

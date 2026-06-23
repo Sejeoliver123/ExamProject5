@@ -8,9 +8,9 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.examproject1styear.gui.AdminDashboardController">
    <children>
       <Button fx:id="btnCreateUser" layoutY="1.0" mnemonicParsing="false" onAction="#handleCreateUser" prefHeight="26.0" prefWidth="110.0" text="CreateUser" />
-      <Button fx:id="btnLogout" layoutX="548.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
-      <Button fx:id="btnLogs" layoutX="111.0" layoutY="2.0" mnemonicParsing="false" text="logs" />
+      <Button layoutX="111.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleLogs" text="logs" />
       <Button fx:id="btnscanning" layoutX="149.0" layoutY="2.0" mnemonicParsing="false" text="Scanning" />
+      <Button fx:id="btnLogout" layoutX="546.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
       <TableView fx:id="tblUsers" layoutY="200.0" prefHeight="200.0" prefWidth="304.0">
         <columns>
             <TableColumn fx:id="colId" prefWidth="75.0" text="Id" />

@@ -86,6 +86,17 @@ public class createUserController {
             // Gemmer brugeren i databasen
             statement.executeUpdate();
 
+            // Opretter en log i Logs-tabellen
+            String logSql = "INSERT INTO Logs (Action, Username) VALUES (?, ?)";
+
+            try (PreparedStatement logStatement = connection.prepareStatement(logSql)) {
+
+                logStatement.setString(1, "Created User");
+                logStatement.setString(2, username);
+
+                logStatement.executeUpdate();
+            }
+
             // Viser loginoplysninger til den oprettede bruger
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Bruger oprettet");
